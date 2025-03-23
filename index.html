@@ -11,7 +11,8 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            color: white;
         }
         .container {
             max-width: 800px;
@@ -19,52 +20,71 @@
             padding: 20px;
         }
         .title {
-            font-size: 32px;
+            font-size: 40px;
             font-weight: bold;
+            animation: fadeIn 2s ease-in-out;
         }
         .subtitle {
-            color: gray;
+            color: #d1d1d1;
             margin-bottom: 20px;
         }
         .social-buttons {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
             margin-bottom: 20px;
         }
         .btn {
             text-decoration: none;
-            padding: 10px 15px;
-            font-size: 20px;
-            background: #333;
+            padding: 12px 18px;
+            font-size: 22px;
+            background: #ff6600;
             color: white;
-            border-radius: 5px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+            background: #ff3300;
         }
         .projects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 10px;
+            gap: 20px;
         }
         .card {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+            transition: 0.3s;
         }
-        .card h2 {
-            margin: 10px 0;
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .about {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+            animation: fadeIn 2s ease-in-out;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="title">My portfolio website</h1>
-        <p class="subtitle">Frontend Dasturchi</p>
+        <h1 class="title">Amirxon Bobojonov - Portfolio</h1>
+        <p class="subtitle">Frontend Dasturchi | JavaScript | React.js</p>
         
         <div class="social-buttons">
             <a href="https://github.com/MUI-0808" class="btn"><i class="fab fa-github"></i></a>
             <a href="https://t.me/L_E_g_E_n_D_08" class="btn"><i class="fa-brands fa-telegram"></i></a>
             <a href="https://www.instagram.com/bobojonoff08_/" class="btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/amirxon-bobojonov-476799336/" class="btn"><i class="fa-brands fa-linkedin"></i></a>
         </div>
         
         <div class="projects">
@@ -84,18 +104,18 @@
                 <a href="#" class="btn">Batafsil</a>
             </div>
         </div>
+
+        <div class="about">
+            <h2>Men Haqimda</h2>
+            <p>Salom! Men Amirxon Bobojonovman, Frontend dasturchiman va JavaScript hamda React.js bilan ishlayman. Web dizayn va interaktiv veb-sahifalar yaratish menga juda yoqadi.</p>
+            <p>📏 Bo‘yim: 183 cm | ⚖️ Vaznim: 65 kg</p>
+            <p>Tugilgan yilim: 2008</p>
+            <p>Yoshim: 16</p>
+            <p>sana: 15-oktyabr</p>
+            <p>💻 Noutbukim: Asus Vivobook | Core i5 (13-avlod, 12 yadro) | 8GB RAM</p>
+            <p>🎮 Arcade o‘yinlarini yoqtiraman va qiziqarli veb-loyihalar yaratishni xohlayman.</p>
+            <p>🚀 Mening maqsadim - zamonaviy va jozibali veb-saytlar yaratish!</p>
+        </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const cards = document.querySelectorAll(".card");
-            cards.forEach((card, index) => {
-                card.style.opacity = 0;
-                setTimeout(() => {
-                    card.style.transition = "opacity 1s";
-                    card.style.opacity = 1;
-                }, index * 300);
-            });
-        });
-    </script>
 </body>
 </html>
